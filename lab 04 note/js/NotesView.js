@@ -6,9 +6,19 @@ export default class NotesView {
         this.onNoteEdit = onNoteEdit;
         this.onNoteDelete = onNoteDelete;
         this.root.innerHTML = `
+            
             <div class="notes__sidebar">
-                <button class="notes__add" type="button">Add Note</button>
+            <div class="topnav">
+            <div class="search-container">
+            <form action="/lab%2004%20note/index.html">
+              <input type="text" placeholder="Wyszukaj.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>    
+                          
+                <button class="notes__add" type="button">Dodaj notatke</button>
                 <div class="notes__list"></div>
+            </div>
             </div>
             <div class="notes__preview">
                 <input class="notes__title" type="text" placeholder="New Note...">
