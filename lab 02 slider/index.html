@@ -4,21 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Slider</title>
+    <title>Slider</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="slider">
-        <div class="slides">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
+    <div class="slider">        
+        <div class="slides fade">
+          <img src="/zxc/Notes zadania/images/images3.jpg" style="width:100%">
+        </div>      
+        <div class="slides fade">
+          <img src="/zxc/Notes zadania/images/images4.jpg" style="width:100%">
+        </div>      
+        <div class="slides fade">
+          <img src="/zxc/Notes zadania/images/images.jpg" style="width:100%">
         </div>
-    </div>
+        <div class="slides fade">
+            <img src="/zxc/Notes zadania/images/images1.jpg" style="width:100%">
+        </div>
+      
+        <!-- Next/pervious button -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <!-- dots -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
     <main>
     </main>
     <script src="main.js"></script>
