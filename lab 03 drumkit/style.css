@@ -1,60 +1,60 @@
 *{
     box-sizing: border-box;
 }
-body{
-    font-size: 16px;
-    background-color:rgb(156, 104, 41);
-    display: flex;
-}
-.sounds{
-    display: flex;
-    text-align: center;
-    height: 100vh;
-    width: 32rem;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    gap: 10px;
-}
-.sound{
-    display: flex;
-    font-size: 4rem;
-    color:darkorange;
-    text-align: center;
-    justify-content: center;
-    width: 5rem;
-    height: 5rem;
-    background-color:black;
-    border-radius: 20px;
 
-    
-}
+body {
+    font-size: 24px;
+    background-color: #444;
+  }
+  
+  .sounds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 20vh;
+    gap: 30px;
+    margin-bottom: 3rem;
+  }
+  .sound {
+    font-size: 3.5rem;
+    padding: 35px;
+    background-color: #fff9e1;
+    text-align: center;
+    border: 1px solid rgb(255, 0, 0);
+    cursor: pointer;
+  }
+
 .records{
+    
     display: flex;
-    /* align-items: center; */
+    /* align-items: center;  */
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 30rem;
-    gap:5px;
+    flex-direction: column;    
+    gap:15px;
+
     
 }
 
-.record{
-    height: 3rem;
-    width: 30rem;
-    background-color:gainsboro;
+.record {
+    border: 3px solid;
+    width: 50vw;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    color: darkorange;
-    border-radius: 30px;
-}
+    justify-content: center;
+    gap: 25px;
+    color: beige;
+    
+  }
+
+
 .btn{
     
     height: 2rem;
     width: 4rem;
-    border-radius: 20px;
+    border-radius: 50px;
+    cursor: pointer;
 }
 .add-btn{
     background-color:rgb(126, 200, 52);
@@ -64,4 +64,4 @@ body{
 }
 .activeGreen{
     background-color: rgb(126, 200, 52);
-}
+} 

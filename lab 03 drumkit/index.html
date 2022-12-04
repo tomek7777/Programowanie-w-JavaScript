@@ -8,16 +8,18 @@
     
 </head>
 <body>
-<div class="sounds">
-    <div data-note="s1" class="sound clap">1</div>
-    <div data-note="s2" class="sound hihat">2</div>
-    <div data-note="s3" class="sound kick">3</div>
-    <div data-note="s4" class="sound openhat">4</div>
-    <div data-note="s5" class="sound boom">5</div>
-    <div data-note="s6" class="sound ride">6</div>
-    <div data-note="s7" class="sound snare">7</div>
-    <div data-note="s8" class="sound tom">8</div>
-    <div data-note="s9" class="sound tink">9</div>
+<div class="drumkit">
+    <div class="sounds">
+        <div data-note="s1" class="sound clap">1</div>
+        <div data-note="s2" class="sound hihat">2</div>
+        <div data-note="s3" class="sound kick">3</div>
+        <div data-note="s4" class="sound openhat">4</div>
+        <div data-note="s5" class="sound boom">5</div>
+        <div data-note="s6" class="sound ride">6</div>
+        <div data-note="s7" class="sound snare">7</div>
+        <div data-note="s8" class="sound tom">8</div>
+        <div data-note="s9" class="sound tink">9</div>
+    </div>
 </div>
 <audio src="./sounds/clap.wav" id="s1"></audio>
 <audio src="./sounds/hihat.wav"  id="s2"></audio>   
@@ -31,19 +33,19 @@
    
 <div class="records">
         <div class="record">
-            <button class="btn play-btn">Play</button>
-            <button class="btn stop-btn">save</button>   
-            <button class="btn record-btn">Record</button>
+            <button class="btn play-btn">Odtwórz</button>
+            <button class="btn stop-btn">Zapisz</button>   
+            <button class="btn record-btn">Nagraj</button>
         </div>
         <div  class="record">
-            Record 1:
-            <button data-note="t1"class="btn track-btn">V</button>
+            Nagranie 1:
+            <button data-note="t1"class="btn track-btn">X</button>
         </div>
         <div class="record">
-            Record 2:
-            <button data-note="t2" class="btn track-btn">V</button>
+            Nagranie 2:
+            <button data-note="t2" class="btn track-btn">X</button>
         </div>
-        <button class="btn add-btn">add</button>
+        <!-- <button class="btn add-btn">add</button> -->
     </body> 
     <script src="drumkit.js"></script>
 </html>

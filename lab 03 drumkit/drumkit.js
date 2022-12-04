@@ -55,7 +55,7 @@ function playSong(){
 
 /////////////////////seting keys and sound///////////////
 const keys={
-  sound:["q","w","e","r","t","y","u","i","o",]
+  sound:["1","2","3","4","5","6","7","8","9",]
 }
 //if index != -1 play sound at position qwww
 document.addEventListener('keydown',e=>{
