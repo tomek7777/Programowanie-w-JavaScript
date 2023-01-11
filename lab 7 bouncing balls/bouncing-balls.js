@@ -9,8 +9,9 @@ canvas.height = height;
 
 let playerBall;
 
-let beta = 0;
-let gamma = 0;
+let beta;
+let gamma;
+
 
 
 class Ball{
@@ -42,38 +43,32 @@ class Ball{
 
         // jeśli pozycja x i y jest większa lub mniejsza
         // niż rzutnia przeglądarki, kulki obracają się w innym kierunku
-        if(this.x + this.size >= width || this.x - this.size <= 0){
-            this.velx = - this.velx;
+
+        if (this.x + this.velx >= width || this.x + this.velx <= 0) {
+            this.velx = 0;
+        }
+        if (this.y + this.vely >= height || this.y + this.vely <= 0) {
+            this.vely = 0;
         }
 
-        if(this.y + this.size >= height || this.y - this.size <= 0){
-            this.vely = - this.vely;
-        }
-
-        // if (this.x + this.velX >= width || this.x + this.velX <= 0) {
-        //     this.velX = 0;
-        // }
-        // if (this.y + this.velY >= height || this.y + this.velY <= 0) {
-        //     this.velY = 0;
-        // }
         // Prędkość x i y jest dodawana do współrzędnych x i y za każdym razem
         // gdy wywoływana jest funkcja updateBall
         this.x += this.velx;
         this.y += this.vely;
     }
 }
+
 function random(min, max) {
     const num = Math.floor(Math.random() * (max - min + 1)) + min;
     return num;
-  }
+}
 
-// tworzenie pilek i przechowywanie w tablicy
-const balls = [];
+
+let balls = [];
 
 function createBallsHole() {
-    while(balls.length < 1) {
-        let size = random(10, 20)
-    
+    while(balls.length < 20) {
+        let size = random(10, 20)    
         
         const ball = new Ball(
         random(size, width - size),
@@ -83,52 +78,64 @@ function createBallsHole() {
         size,
         `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`
         );
-    
+        
+
     
         balls.push(ball); 
     }
 }
 
 function createPlayerBall() {
-    const radius = 50;
+    const radius = 20;
 
     playerBall = new Ball (
         random(radius, width - radius),
         random(radius, height - radius),
-        beta,
-        gamma,
-        10,
+        1,
+        0,
         radius,
-        `rgb(255, 0, 0)`
+        `red`,
+      
     );
-    console.log(playerBall)
+    
+    console.log(playerBall);
 }
 
+window.addEventListener("deviceorientation", ballSpeed);
 
-// petla
 function loop() {
-
     
-    ctx.fillStyle = 'lightyellow';
+    ctx.fillStyle = 'yellow';
     ctx.fillRect(0, 0, width, height);
 
     playerBall.drawBall();
     playerBall.updateBall();
 
     for(let i = 0; i < balls.length; i++){
-        balls[i].drawBall();
-        balls[i].updateBall();
+        balls[i].drawBall();        
         
     }
+
+
+    balls = balls.filter((ball) => {
+        return (
+          Math.hypot(playerBall.x - ball.x, playerBall.y - ball.y) >=
+          playerBall.size + ball.size
+        );
+    });
+
     requestAnimationFrame(loop);
+
+
 }
-window.addEventListener("deviceorientation", ballSpeed);
 
 function ballSpeed(event) {
     beta = event.beta / 20;
     gamma = event.gamma / 20;
+    playerBall.velx = gamma;
+    playerBall.vely = beta;
 }
-  
+
 createBallsHole();
 createPlayerBall();
 loop();
